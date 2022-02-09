@@ -1,5 +1,28 @@
 VERSION := $(shell grep . VERSION.txt | cut -f1 -d:)
 PROGRAM_NAME:= myproj
+osRelease = $(shell lsb_release -r | sed -e "s/Release:\W*//" -e "s/\..*//")
+ifeq ($(osRelease),7)
+	hostName = $(shell hostname | sed -e "s:[-_].*::")$(osRelease)
+else
+	hostName = $(shell hostname | sed -e "s:[-_].*::")
+endif
+
+ifeq ($(hostName),nanohub7)
+	BIN = ../bin
+	MODINIT = . /etc/environ.sh
+	MODCMD = use -e -r anaconda3-5.1
+else
+ifeq ($(hostName),rice7)
+	BIN = ../bin/rice7
+	MODINIT = . $(MODULESHOME)/init/sh
+	MODCMD = module purge 2> /dev/null; module load gcc/7.3.0
+endif
+ifeq ($(hostName),brown7)
+	BIN = ../bin/brown7
+	MODINIT = . $(MODULESHOME)/init/sh
+	MODCMD = module purge 2> /dev/null; module load gcc/7.3.0
+endif
+endif
 
 CC := g++
 # CC := g++-mp-7 # typical macports compiler name
@@ -167,11 +190,13 @@ epithelium_submodel.o: ./custom_modules/epithelium_submodel.cpp
 	
 # next 2 targets for nanoHUB
 install: 
-	. /etc/environ.sh; use -e -r anaconda3-5.1; make all
-	cp $(PROGRAM_NAME) ../bin
+	$(MODINIT); $(MODCMD); make all
+	install --mode 0755 -D $(PROGRAM_NAME) $(BIN)/$(PROGRAM_NAME)
 
 distclean: clean
-	rm -f ../bin/$(PROGRAM_NAME)
+	rm -f $(BIN)/$(PROGRAM_NAME)
+	rm -rf $(BIN)/__pycache__
+	rm -rf ../.ipynb_checkpoints
 
 clean:
 	rm -f *.o

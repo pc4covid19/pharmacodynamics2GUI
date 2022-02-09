@@ -47,7 +47,7 @@ void advance_internalization( Cell* pCell, Phenotype& phenotype , double dt )
 	
 	static int cell_drug_i = pCell->custom_data.find_variable_index("Uptaken_drug");
 	static int intra_drug_concentration_i = pCell->custom_data.find_variable_index("Intracellular_drug_concentration");
-    static int drug_substrate_ID = microenvironment.find_density_index( "drug" );
+       static int drug_substrate_ID = microenvironment.find_density_index( "drug" );
 	
 	// obtain the total uptaken drug
 	pCell->custom_data[ cell_drug_i ] = pCell->phenotype.molecular.internalized_total_substrates[ drug_substrate_ID ]; 
@@ -135,27 +135,32 @@ void pharmacodynamics_response( Cell* pCell, Phenotype& phenotype, double dt )
 {
     // drug effect !!!!!
 	advance_internalization( pCell, phenotype , dt ); 
-    simple_effect_model( pCell, phenotype , dt );
+       simple_effect_model( pCell, phenotype , dt );
 
 	static int drug_effect_extra = pCell->custom_data.find_variable_index("Extracellular_drug_effect"); 
 	static bool endo_export_enabled = parameters.bools( "drug_endo_export" );  
 	static int drug_effect_intra = pCell->custom_data.find_variable_index("Intracellular_drug_effect"); 
-	static bool binding_replication_enabled = parameters.bools( "drug_binding_replication" );  
+	static bool replication_enabled = parameters.bools( "drug_replication" );  
+
+	static int RNA_index =  pCell->custom_data.find_variable_index( "viral_RNA" ); 
 	
     // uptake new production rate based on drug effect 
 	if ( endo_export_enabled )
 	{
-      
-        pCell->custom_data[ "ACE2_endocytosis_rate" ] = interpolate( 
+	   if( pCell->custom_data[RNA_index] >= parameters.doubles("RNA_threshold") )
+		{
+                 pCell->custom_data[ "ACE2_endocytosis_rate" ] = interpolate( 
+        	   parameters.doubles("ACE2_endocytosis_rate_feedback"),  
+                 parameters.doubles("drug_ACE2_endocytosis_rate"), 
+                 pCell->custom_data[ drug_effect_intra]); 
+		}
+	   else 
+	    {
+	    	pCell->custom_data[ "ACE2_endocytosis_rate" ] = interpolate( 
         	   parameters.doubles("ACE2_endocytosis_rate_original"),  
                parameters.doubles("drug_ACE2_endocytosis_rate"), 
-               pCell->custom_data[ drug_effect_extra]); 
-
-        pCell->custom_data[ "virion_uncoating_rate"] = interpolate( 
-               parameters.doubles("virion_uncoating_rate_original"),  
-               parameters.doubles("drug_virion_uncoated"), 
-               pCell->custom_data[ drug_effect_intra]);   
- 
+               pCell->custom_data[ drug_effect_intra]); 
+	    }
 
 		pCell->custom_data[ "virion_export_rate"] = interpolate( 
                parameters.doubles("virion_export_rate_original"),  
@@ -163,29 +168,63 @@ void pharmacodynamics_response( Cell* pCell, Phenotype& phenotype, double dt )
                pCell->custom_data[ drug_effect_intra]);   
     }
 
-    // uptake new production rate based on drug effect 
-	if ( binding_replication_enabled )
+    // uptake new production rate based on drug effect
+	if ( replication_enabled )
 	{
-        pCell->custom_data[ "ACE2_binding_rate" ] = interpolate( 
-        	   parameters.doubles("ACE2_binding_rate_original"),  
-               parameters.doubles("drug_ACE2_binding_rate"), 
-               pCell->custom_data[ drug_effect_extra]); 
 
+	// Maraviroc doesn't impact viral binding process accoding to Aarith experiental results
+	// Let's only focus on uncoating RNA and protein synthesis rate 
+	/*	
+		if( pCell->custom_data[RNA_index] >= parameters.doubles("RNA_threshold") )
+		{
 
-        pCell->custom_data[ "uncoated_to_RNA_rate" ] = interpolate( 
-        	   parameters.doubles("uncoated_to_RNA_rate_original"),  
-               parameters.doubles("drug_uncoated_to_RNA_rate"), 
-               pCell->custom_data[ drug_effect_intra]); 
+	          pCell->custom_data[ "ACE2_binding_rate" ] = interpolate( 
+	 	    	parameters.doubles("ACE2_binding_rate_feedback"),  
+	        	parameters.doubles("drug_ACE2_binding_rate"), 
+	        	pCell->custom_data[ drug_effect_intra]); 
+		}
+		else
+		{
+		   pCell->custom_data[ "ACE2_binding_rate" ] = interpolate( 
+	 	   	parameters.doubles("ACE2_binding_rate_original"),  
+	        	parameters.doubles("drug_ACE2_binding_rate"), 
+	        	pCell->custom_data[ drug_effect_intra]); 
+		}
+ 	*/
+
+	/*
+        pCell->custom_data[ "virion_uncoating_rate"] = interpolate( 
+               parameters.doubles("virion_uncoating_rate_original"),  
+               parameters.doubles("drug_virion_uncoated"), 
+               pCell->custom_data[ drug_effect_intra]);   
+	*/
+
+	if( pCell->custom_data[RNA_index] >= parameters.doubles("RNA_threshold") )
+	{
+		pCell->custom_data[ "uncoated_to_RNA_rate" ] = interpolate( 
+        		parameters.doubles("uncoated_to_RNA_rate_feedback"),  
+               	parameters.doubles("drug_uncoated_to_RNA_rate"), 
+               	pCell->custom_data[ drug_effect_intra]);
+	}
+	else
+	{
+		pCell->custom_data[ "uncoated_to_RNA_rate" ] = interpolate( 
+        	   	parameters.doubles("uncoated_to_RNA_rate_original"),  
+                 	parameters.doubles("drug_uncoated_to_RNA_rate"), 
+                 	pCell->custom_data[ drug_effect_intra]);
+	}
 
         pCell->custom_data[ "protein_synthesis_rate" ] = interpolate( 
         	   parameters.doubles("protein_synthesis_rate_original"),  
                parameters.doubles("drug_protein_synthesis_rate"), 
                pCell->custom_data[ drug_effect_intra]); 
 
+        /*
         pCell->custom_data[ "virion_assembly_rate" ] = interpolate( 
         	   parameters.doubles("virion_assembly_rate_original"),  
                parameters.doubles("drug_virion_assembly_rate"), 
-               pCell->custom_data[ drug_effect_intra]);   
+               pCell->custom_data[ drug_effect_intra]);  
+        */ 
     }  
 }
 
@@ -232,7 +271,10 @@ void apply_therapies( void )
 			{
 				// if( microenvironment.mesh.voxels[i].is_Dirichlet == true )
 				// { microenvironment.update_dirichlet_node( i, index, dose ); }
-				microenvironment(i)[index] += doses;
+				// microenvironment(i)[index] += doses;
+				microenvironment.set_substrate_dirichlet_activation(index, i, true); 
+				microenvironment.update_dirichlet_node( i, index, doses ); 
+
 			}	
 		
 			dose_update++;

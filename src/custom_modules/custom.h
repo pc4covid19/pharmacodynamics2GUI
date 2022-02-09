@@ -93,6 +93,9 @@ std::string blue_yellow_interpolation( double min, double val, double max );
 std::vector<std::string> epithelium_coloring_function( Cell* );
 std::vector<std::string> tissue_coloring_function( Cell* );
 
+// color cell fusion, YW 2022
+std::string cell_fusion_color(double val);
+
 // eventually move this to a tissue submodel 
 
 void move_exported_to_viral_field( void ); 

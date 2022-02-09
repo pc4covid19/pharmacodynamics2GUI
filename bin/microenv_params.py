@@ -22,6 +22,7 @@ class MicroenvTab(object):
 
         name_button_layout={'width':'25%'}
         widget_layout = {'width': '15%'}
+        widget2_layout = {'width': '10%'}
         units_button_layout ={'width':'15%'}
         desc_button_layout={'width':'45%'}
 
@@ -71,13 +72,13 @@ class MicroenvTab(object):
 
         param_name9 = Button(description='diffusion_coefficient', disabled=True, layout=name_button_layout)
 
-        self.drug_diffusion_coefficient = FloatText(value=60,
-          step=1,style=style, layout=widget_layout)
+        self.drug_diffusion_coefficient = FloatText(value=36000,
+          step=1000,style=style, layout=widget_layout)
 
         param_name10 = Button(description='decay_rate', disabled=True, layout=name_button_layout)
 
-        self.drug_decay_rate = FloatText(value=0.0001,
-          step=1e-05,style=style, layout=widget_layout)
+        self.drug_decay_rate = FloatText(value=0,
+          step=0.01,style=style, layout=widget_layout)
         param_name11 = Button(description='initial_condition', disabled=True, layout=name_button_layout)
 
         self.drug_initial_condition = FloatText(value=0,style=style, layout=widget_layout)
