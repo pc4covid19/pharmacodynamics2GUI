@@ -6,3 +6,6 @@ This repository contains code and data for the nanoHUB app: https://nanohub.org/
 ## Release summary:
 ### 1.0:
 This is initial release. 
+
+### 2.0:
+In this version of release, we added model of cell fusion. 

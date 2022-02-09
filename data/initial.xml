@@ -11,9 +11,9 @@
 		</software>
 		<citation />
 		<current_time units="min">0.000000</current_time>
-		<current_runtime units="sec">0.055101</current_runtime>
-		<created>2020-07-27T04:03:45Z</created>
-		<last_modified>2020-07-27T04:03:45Z</last_modified>
+		<current_runtime units="sec">0.061415</current_runtime>
+		<created>2022-02-09T15:43:15Z</created>
+		<last_modified>2022-02-09T15:43:15Z</last_modified>
 	</metadata>
 	<microenvironment>
 		<domain name="microenvironment">
@@ -44,8 +44,8 @@
 				<variable name="drug" units="uM" ID="2">
 					<physical_parameter_set>
 						<conditions />
-						<diffusion_coefficient units="micron^2/min">60.000000</diffusion_coefficient>
-						<decay_rate units="1/min">0.000100</decay_rate>
+						<diffusion_coefficient units="micron^2/min">36000.000000</diffusion_coefficient>
+						<decay_rate units="1/min">0.000000</decay_rate>
 					</physical_parameter_set>
 				</variable>
 			</variables>
@@ -108,6 +108,11 @@
 							<label index="50" size="1">Intracellular_drug_concentration</label>
 							<label index="51" size="1">Intracellular_drug_effect</label>
 							<label index="52" size="1">Extracellular_drug_effect</label>
+							<label index="53" size="1">fraction_transferred_when_ingested</label>
+							<label index="54" size="1">cell_fusion_number</label>
+							<label index="55" size="1">phagocytosis_rate</label>
+							<label index="56" size="1">time_to_next_phagocytosis</label>
+							<label index="57" size="1">material_internalisation_rate</label>
 						</labels>
 						<filename>initial_cells_physicell.mat</filename>
 					</simplified_data>

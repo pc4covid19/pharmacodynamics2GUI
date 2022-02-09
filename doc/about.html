@@ -31,7 +31,7 @@ and pharmacodynamics response. It is being rapidly prototyped and refined with c
 
 
 <p>This multiscale simulator combines several model components, including <strong>Tissue</strong>, <strong>ACE2 receptor dynamics</strong>,
-  <strong>Viral replication</strong>, <strong>Single-cell response</strong> and <strong><span style="background-color: red; color: white; padding-left: 0.1in; padding-right: 0.1in"><strong>Pharmacodynamics submodel</strong></span></strong>. Please see <a href="https://nanohub.org/tools/pc4covid19" target="_blank">PhysiCell model for COVID19</a> for whole model information.
+  <strong>Viral replication</strong>, <strong>Single-cell response</strong> and <strong><span style="background-color: red; color: white; padding-left: 0.1in; padding-right: 0.1in"><strong>Pharmacodynamics submodel</strong></span></strong>. We also modified the epithelium dynamics submodel to simulate <strong>Cell fusion</strong> process. Please see <a href="https://nanohub.org/tools/pc4covid19" target="_blank">PhysiCell model for COVID19</a> for whole model information.
 
 <p>In the pharmacodynamics submodel, we model the maximum multiplication response vector&nbsp;<strong>r</strong><sub>multiplication</sub> as virion response to drug dose. We assume drug has a Hill coefficient (<em>n</em>)<em>&nbsp;</em>and half-max effect drug concentration (EC<sub>50</sub>). We use a Hill effects model:</p> 
 
@@ -41,14 +41,14 @@ and pharmacodynamics response. It is being rapidly prototyped and refined with c
 
 <p style="text-align: center;"><strong>r</strong><sub>multiplication</sub>&nbsp;= <strong>d</strong><sub>0</sub> + (<strong>d</strong><sub>max</sub> &minus; <strong>d</strong><sub>0</sub>)&nbsp;<em>E</em> / <em>E</em><sub>max</sub> S </p> 
 
-<p>In the above equation, <strong>d</strong><sub>0</sub> is background rates; <strong>d</strong><sub>max</sub> is drug induced maximum damage to multiplication rates; S is the drug efficiency. We also need to mention that we calculate two kinds of drug effects in the model, extracellular and intracellular, for modeling inhibiting endocytosis and virion replication processs. Please see the diagram as following: 
+<p>In the above equation, <strong>d</strong><sub>0</sub> is background rates; <strong>d</strong><sub>max</sub> is drug induced maximum damage to multiplication rates; S is the drug efficiency. We also need to mention that we calculate three kinds of drug effects in the model, extracellular and intracellular as well as cell fusion, for modeling inhibiting endocytosis, virion replication, and cell fusion processs. Please see the diagram as following: 
 
 <div class="row">
   <div class="column">
-    <img src="doc/figure1.png" alt="domain" style="width:100%">
+    <img src="doc/overall_model.png" alt="domain" style="width:110%">
   </div>
   <div class="column">
-    <img src="doc/figure2.png" alt="drugeffect" style="width:100%">
+    <img src="doc/drug_effect.png" alt="domain" style="width:110%">
   </div>
 </div>
 
@@ -58,7 +58,7 @@ and pharmacodynamics response. It is being rapidly prototyped and refined with c
 </p>
 
 <p style="text-align: center;">
-    Y. Wang et al., Rapid community-driven development of a SARS-CoV-2 tissue simulator. 
+    Michael Getz et al., Iterative community-driven development of a SARS-CoV-2 tissue simulator. 
     <i>bioRxiv</i> 2020.04.02.019075, 2020, <b>(Preprint)</b>.  
     doi: <a href="https://dx.doi.org/10.1101/2020.04.02.019075" target="_blank">10.1101/2020.04.02.019075</a>.
 </p>
@@ -69,13 +69,23 @@ and pharmacodynamics response. It is being rapidly prototyped and refined with c
 
 <li><strong>lung epithelium:</strong> are colored by their (assembled) virion loads in four colors </li>
 <ul style="font-family: courier;">
-
 <li><span style="height: 25px; width: 25px; background-color: rgb(0,0,255); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 0 assembled virions. </li>
 <li><span style="height: 25px; width: 25px; background-color: rgb(64,64,199); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 1-9 assembled virions. </li>
 <li><span style="height: 25px; width: 25px; background-color: rgb(128,128,128); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 10-99 assembled virions. </li>
 <li><span style="height: 25px; width: 25px; background-color: rgb(199,199,64); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 100-999 assembled virions. </li>
 <li><span style="height: 25px; width: 25px; background-color: rgb(255,255,0); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 1000+ assembled virions. </li>
 <li><span style="height: 25px; width: 25px; background-color: rgb(0,0,0); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Apoptotic (dead from viral load) </li>
+</ul>
+
+</br>
+
+<li><strong>Cell fusion:</strong> are colored by how many times of fusion</li>
+<ul style="font-family: courier;">
+<li><span style="height: 25px; width: 25px; background-color: rgb(255,0,255); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cell fusion times within [1,2] </li>
+<li><span style="height: 25px; width: 25px; background-color: rgb(0,255,128); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cell fusion times within (2,4] </li>
+<li><span style="height: 25px; width: 25px; background-color: rgb(255,0,0); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cell fusion times within (4,6] </li>
+<li><span style="height: 25px; width: 25px; background-color: rgb(255,153,51); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cell fusion times within (6,8] </li>
+<li><span style="height: 25px; width: 25px; background-color: rgb(153,0,0); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cell fusion times within 8+ </li>
 </ul>
 
 </br>
