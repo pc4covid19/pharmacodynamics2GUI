@@ -11,9 +11,9 @@
 		</software>
 		<citation />
 		<current_time units="min">0.000000</current_time>
-		<current_runtime units="sec">0.058635</current_runtime>
-		<created>2022-02-09T16:01:44Z</created>
-		<last_modified>2022-02-09T16:01:44Z</last_modified>
+		<current_runtime units="sec">0.058989</current_runtime>
+		<created>2022-02-24T01:48:38Z</created>
+		<last_modified>2022-02-24T01:48:38Z</last_modified>
 	</metadata>
 	<microenvironment>
 		<domain name="microenvironment">
@@ -110,8 +110,8 @@
 							<label index="52" size="1">Extracellular_drug_effect</label>
 							<label index="53" size="1">fraction_transferred_when_ingested</label>
 							<label index="54" size="1">cell_fusion_number</label>
-							<label index="55" size="1">phagocytosis_rate</label>
-							<label index="56" size="1">time_to_next_phagocytosis</label>
+							<label index="55" size="1">fusion_rate</label>
+							<label index="56" size="1">time_to_next_fusion</label>
 							<label index="57" size="1">material_internalisation_rate</label>
 						</labels>
 						<filename>initial_cells_physicell.mat</filename>

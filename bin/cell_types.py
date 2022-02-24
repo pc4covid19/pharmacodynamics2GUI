@@ -434,7 +434,7 @@ class CellTypesTab(object):
         box41 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_uncoating_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float40 = FloatText(value='0.0465', step='0.01', style=style, layout=widget_layout)
+        self.float40 = FloatText(value='0.06', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which an internalized virion is uncoated', disabled=True, layout=desc_button_layout)
@@ -444,7 +444,7 @@ class CellTypesTab(object):
         box42 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_to_RNA_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float41 = FloatText(value='0.0465', step='0.01', style=style, layout=widget_layout)
+        self.float41 = FloatText(value='0.06', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which uncoated virion makes its mRNA available', disabled=True, layout=desc_button_layout)
@@ -454,7 +454,7 @@ class CellTypesTab(object):
         box43 = Box(children=row, layout=box_layout)
         name_btn = Button(description='protein_synthesis_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float42 = FloatText(value='0.0465', step='0.01', style=style, layout=widget_layout)
+        self.float42 = FloatText(value='0.06', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at mRNA creates complete set of proteins', disabled=True, layout=desc_button_layout)
@@ -464,7 +464,7 @@ class CellTypesTab(object):
         box44 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_assembly_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float43 = FloatText(value='0.0465', step='0.01', style=style, layout=widget_layout)
+        self.float43 = FloatText(value='0.06', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which viral proteins are assembled into complete virion', disabled=True, layout=desc_button_layout)
@@ -474,7 +474,7 @@ class CellTypesTab(object):
         box45 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_export_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float44 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
+        self.float44 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which a virion is exported from a live cell', disabled=True, layout=desc_button_layout)
@@ -662,7 +662,7 @@ class CellTypesTab(object):
         row = [name_btn, self.float62, units_btn, description_btn] 
 
         box64 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='phagocytosis_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='fusion_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
         self.float63 = FloatText(value='0.167', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
@@ -672,12 +672,12 @@ class CellTypesTab(object):
         row = [name_btn, self.float63, units_btn, description_btn] 
 
         box65 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='time_to_next_phagocytosis', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='time_to_next_fusion', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
         self.float64 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
-        description_btn = Button(description='time it takes for the neighbor cell to be phagocytosed', disabled=True, layout=desc_button_layout)
+        description_btn = Button(description='time it takes for the neighbor cell to be fused', disabled=True, layout=desc_button_layout)
         description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float64, units_btn, description_btn] 
 
@@ -1113,7 +1113,7 @@ class CellTypesTab(object):
         box109 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_uncoating_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float106 = FloatText(value='0.0465', step='0.01', style=style, layout=widget_layout)
+        self.float106 = FloatText(value='0.06', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which an internalized virion is uncoated', disabled=True, layout=desc_button_layout)
@@ -1123,7 +1123,7 @@ class CellTypesTab(object):
         box110 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_to_RNA_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float107 = FloatText(value='0.0465', step='0.01', style=style, layout=widget_layout)
+        self.float107 = FloatText(value='0.06', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which uncoated virion makes its mRNA available', disabled=True, layout=desc_button_layout)
@@ -1133,7 +1133,7 @@ class CellTypesTab(object):
         box111 = Box(children=row, layout=box_layout)
         name_btn = Button(description='protein_synthesis_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float108 = FloatText(value='0.0465', step='0.01', style=style, layout=widget_layout)
+        self.float108 = FloatText(value='0.06', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at mRNA creates complete set of proteins', disabled=True, layout=desc_button_layout)
@@ -1143,7 +1143,7 @@ class CellTypesTab(object):
         box112 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_assembly_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float109 = FloatText(value='0.0465', step='0.01', style=style, layout=widget_layout)
+        self.float109 = FloatText(value='0.06', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which viral proteins are assembled into complete virion', disabled=True, layout=desc_button_layout)
@@ -1153,7 +1153,7 @@ class CellTypesTab(object):
         box113 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_export_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float110 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
+        self.float110 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which a virion is exported from a live cell', disabled=True, layout=desc_button_layout)
@@ -1341,7 +1341,7 @@ class CellTypesTab(object):
         row = [name_btn, self.float128, units_btn, description_btn] 
 
         box132 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='phagocytosis_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='fusion_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
         self.float129 = FloatText(value='0.167', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
@@ -1351,12 +1351,12 @@ class CellTypesTab(object):
         row = [name_btn, self.float129, units_btn, description_btn] 
 
         box133 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='time_to_next_phagocytosis', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='time_to_next_fusion', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
         self.float130 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
-        description_btn = Button(description='time it takes for the neighbor cell to be phagocytosed', disabled=True, layout=desc_button_layout)
+        description_btn = Button(description='time it takes for the neighbor cell to be fused', disabled=True, layout=desc_button_layout)
         description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float130, units_btn, description_btn] 
 

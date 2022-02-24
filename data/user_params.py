@@ -132,7 +132,7 @@ class UserTab(object):
         param_name13.style.button_color = 'tan'
 
         self.Hill_power = FloatText(
-          value=1,
+          value=2.5,
           step=0.1,
           style=style, layout=widget_layout)
 
@@ -175,10 +175,10 @@ class UserTab(object):
           value=True,
           style=style, layout=widget_layout)
 
-        param_name19 = Button(description='drug_binding_replication', disabled=True, layout=name_button_layout)
+        param_name19 = Button(description='drug_replication', disabled=True, layout=name_button_layout)
         param_name19.style.button_color = 'tan'
 
-        self.drug_binding_replication = Checkbox(
+        self.drug_replication = Checkbox(
           value=False,
           style=style, layout=widget_layout)
 
@@ -200,32 +200,32 @@ class UserTab(object):
 
         div_row5 = Button(description='---Cell fusion Options--', disabled=True, layout=divider_button_layout)
 
-        param_name22 = Button(description='max_apoptosis_half_max_orginal', disabled=True, layout=name_button_layout)
-        param_name22.style.button_color = 'lightgreen'
+        param_name22 = Button(description='half_max_virion_fusion', disabled=True, layout=name_button_layout)
+        param_name22.style.button_color = 'tan'
 
-        self.max_apoptosis_half_max_orginal = FloatText(
-          value=500,
-          step=10,
-          style=style, layout=widget_layout)
-
-        param_name23 = Button(description='half_max_cell_fusion', disabled=True, layout=name_button_layout)
-        param_name23.style.button_color = 'tan'
-
-        self.half_max_cell_fusion = FloatText(
+        self.half_max_virion_fusion = FloatText(
           value=100,
           step=10,
           style=style, layout=widget_layout)
 
+        param_name23 = Button(description='half_max_ACE2_fusion', disabled=True, layout=name_button_layout)
+        param_name23.style.button_color = 'lightgreen'
+
+        self.half_max_ACE2_fusion = FloatText(
+          value=200,
+          step=10,
+          style=style, layout=widget_layout)
+
         param_name24 = Button(description='drug_fusion_power', disabled=True, layout=name_button_layout)
-        param_name24.style.button_color = 'lightgreen'
+        param_name24.style.button_color = 'tan'
 
         self.drug_fusion_power = FloatText(
-          value=5,
+          value=2.5,
           step=0.1,
           style=style, layout=widget_layout)
 
         param_name25 = Button(description='drug_cell_fusion', disabled=True, layout=name_button_layout)
-        param_name25.style.button_color = 'tan'
+        param_name25.style.button_color = 'lightgreen'
 
         self.drug_cell_fusion = Checkbox(
           value=True,
@@ -284,13 +284,13 @@ class UserTab(object):
         units_button26 = Button(description='', disabled=True, layout=units_button_layout) 
         units_button26.style.button_color = 'tan'
         units_button27 = Button(description='virion', disabled=True, layout=units_button_layout) 
-        units_button27.style.button_color = 'lightgreen'
-        units_button28 = Button(description='virion', disabled=True, layout=units_button_layout) 
-        units_button28.style.button_color = 'tan'
+        units_button27.style.button_color = 'tan'
+        units_button28 = Button(description='ACE2', disabled=True, layout=units_button_layout) 
+        units_button28.style.button_color = 'lightgreen'
         units_button29 = Button(description='', disabled=True, layout=units_button_layout) 
-        units_button29.style.button_color = 'lightgreen'
+        units_button29.style.button_color = 'tan'
         units_button30 = Button(description='', disabled=True, layout=units_button_layout) 
-        units_button30.style.button_color = 'tan'
+        units_button30.style.button_color = 'lightgreen'
 
         desc_button1 = Button(description='' , tooltip='', disabled=True, layout=desc_button_layout) 
         desc_button1.style.button_color = 'lightgreen'
@@ -328,20 +328,20 @@ class UserTab(object):
         desc_button28.style.button_color = 'tan'
         desc_button29 = Button(description='Turn on the drug effect on virial endocytosis and export or not' , tooltip='Turn on the drug effect on virial endocytosis and export or not', disabled=True, layout=desc_button_layout) 
         desc_button29.style.button_color = 'lightgreen'
-        desc_button30 = Button(description='Turn on the drug effect on virial binding and replication or not' , tooltip='Turn on the drug effect on virial binding and replication or not', disabled=True, layout=desc_button_layout) 
+        desc_button30 = Button(description='Turn on the drug effect on virial replication or not' , tooltip='Turn on the drug effect on virial replication or not', disabled=True, layout=desc_button_layout) 
         desc_button30.style.button_color = 'tan'
         desc_button31 = Button(description='color cells based on this variable' , tooltip='color cells based on this variable', disabled=True, layout=desc_button_layout) 
         desc_button31.style.button_color = 'lightgreen'
         desc_button32 = Button(description='apoptotic epithelial cell color' , tooltip='apoptotic epithelial cell color', disabled=True, layout=desc_button_layout) 
         desc_button32.style.button_color = 'tan'
-        desc_button33 = Button(description='viral load at which cells reach half max apoptosis rate' , tooltip='viral load at which cells reach half max apoptosis rate', disabled=True, layout=desc_button_layout) 
-        desc_button33.style.button_color = 'lightgreen'
         desc_button34 = Button(description='viral load at which cell fusion reach half max rate' , tooltip='viral load at which cell fusion reach half max rate', disabled=True, layout=desc_button_layout) 
         desc_button34.style.button_color = 'tan'
-        desc_button35 = Button(description='Power that used in function for cell fusion inhibtion' , tooltip='Power that used in function for cell fusion inhibtion', disabled=True, layout=desc_button_layout) 
+        desc_button35 = Button(description='unbound ACE2 at which cell fusion reach half max rate' , tooltip='unbound ACE2 at which cell fusion reach half max rate', disabled=True, layout=desc_button_layout) 
         desc_button35.style.button_color = 'lightgreen'
-        desc_button36 = Button(description='Turn on the drug effect on cell fusion or not' , tooltip='Turn on the drug effect on cell fusion or not', disabled=True, layout=desc_button_layout) 
+        desc_button36 = Button(description='Power that used in function for cell fusion inhibtion' , tooltip='Power that used in function for cell fusion inhibtion', disabled=True, layout=desc_button_layout) 
         desc_button36.style.button_color = 'tan'
+        desc_button37 = Button(description='Turn on the drug effect on cell fusion or not' , tooltip='Turn on the drug effect on cell fusion or not', disabled=True, layout=desc_button_layout) 
+        desc_button37.style.button_color = 'lightgreen'
 
         row1 = [param_name1, self.random_seed, units_button1, desc_button1] 
         row2 = [param_name2, self.multiplicity_of_infection, units_button3, desc_button2] 
@@ -361,13 +361,13 @@ class UserTab(object):
         row27 = [param_name16, self.start_inject, units_button19, desc_button27] 
         row28 = [param_name17, self.internalization_rate, units_button20, desc_button28] 
         row29 = [param_name18, self.drug_endo_export, units_button21, desc_button29] 
-        row30 = [param_name19, self.drug_binding_replication, units_button22, desc_button30] 
+        row30 = [param_name19, self.drug_replication, units_button22, desc_button30] 
         row31 = [param_name20, self.color_variable, units_button24, desc_button31] 
         row32 = [param_name21, self.apoptotic_epithelium_color, units_button25, desc_button32] 
-        row33 = [param_name22, self.max_apoptosis_half_max_orginal, units_button27, desc_button33] 
-        row34 = [param_name23, self.half_max_cell_fusion, units_button28, desc_button34] 
-        row35 = [param_name24, self.drug_fusion_power, units_button29, desc_button35] 
-        row36 = [param_name25, self.drug_cell_fusion, units_button30, desc_button36] 
+        row34 = [param_name22, self.half_max_virion_fusion, units_button27, desc_button34] 
+        row35 = [param_name23, self.half_max_ACE2_fusion, units_button28, desc_button35] 
+        row36 = [param_name24, self.drug_fusion_power, units_button29, desc_button36] 
+        row37 = [param_name25, self.drug_cell_fusion, units_button30, desc_button37] 
 
         box_layout = Layout(display='flex', flex_flow='row', align_items='stretch', width='100%')
         box1 = Box(children=row1, layout=box_layout)
@@ -391,10 +391,10 @@ class UserTab(object):
         box30 = Box(children=row30, layout=box_layout)
         box31 = Box(children=row31, layout=box_layout)
         box32 = Box(children=row32, layout=box_layout)
-        box33 = Box(children=row33, layout=box_layout)
         box34 = Box(children=row34, layout=box_layout)
         box35 = Box(children=row35, layout=box_layout)
         box36 = Box(children=row36, layout=box_layout)
+        box37 = Box(children=row37, layout=box_layout)
 
         self.tab = VBox([
           box1,
@@ -423,10 +423,10 @@ class UserTab(object):
           box31,
           box32,
           div_row5,
-          box33,
           box34,
           box35,
           box36,
+          box37,
         ])
 
     # Populate the GUI widgets with values from the XML
@@ -456,11 +456,11 @@ class UserTab(object):
         self.start_inject.value = int(uep.find('.//start_inject').text)
         self.internalization_rate.value = float(uep.find('.//internalization_rate').text)
         self.drug_endo_export.value = ('true' == (uep.find('.//drug_endo_export').text.lower()) )
-        self.drug_binding_replication.value = ('true' == (uep.find('.//drug_binding_replication').text.lower()) )
+        self.drug_replication.value = ('true' == (uep.find('.//drug_replication').text.lower()) )
         self.color_variable.value = (uep.find('.//color_variable').text)
         self.apoptotic_epithelium_color.value = (uep.find('.//apoptotic_epithelium_color').text)
-        self.max_apoptosis_half_max_orginal.value = float(uep.find('.//max_apoptosis_half_max_orginal').text)
-        self.half_max_cell_fusion.value = float(uep.find('.//half_max_cell_fusion').text)
+        self.half_max_virion_fusion.value = float(uep.find('.//half_max_virion_fusion').text)
+        self.half_max_ACE2_fusion.value = float(uep.find('.//half_max_ACE2_fusion').text)
         self.drug_fusion_power.value = float(uep.find('.//drug_fusion_power').text)
         self.drug_cell_fusion.value = ('true' == (uep.find('.//drug_cell_fusion').text.lower()) )
 
@@ -492,10 +492,10 @@ class UserTab(object):
         uep.find('.//start_inject').text = str(self.start_inject.value)
         uep.find('.//internalization_rate').text = str(self.internalization_rate.value)
         uep.find('.//drug_endo_export').text = str(self.drug_endo_export.value)
-        uep.find('.//drug_binding_replication').text = str(self.drug_binding_replication.value)
+        uep.find('.//drug_replication').text = str(self.drug_replication.value)
         uep.find('.//color_variable').text = str(self.color_variable.value)
         uep.find('.//apoptotic_epithelium_color').text = str(self.apoptotic_epithelium_color.value)
-        uep.find('.//max_apoptosis_half_max_orginal').text = str(self.max_apoptosis_half_max_orginal.value)
-        uep.find('.//half_max_cell_fusion').text = str(self.half_max_cell_fusion.value)
+        uep.find('.//half_max_virion_fusion').text = str(self.half_max_virion_fusion.value)
+        uep.find('.//half_max_ACE2_fusion').text = str(self.half_max_ACE2_fusion.value)
         uep.find('.//drug_fusion_power').text = str(self.drug_fusion_power.value)
         uep.find('.//drug_cell_fusion').text = str(self.drug_cell_fusion.value)
