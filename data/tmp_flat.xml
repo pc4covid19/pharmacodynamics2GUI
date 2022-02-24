@@ -233,7 +233,7 @@
 				<fraction_transferred_when_ingested description="fraction of virions absorbed when phagocytosing a cell" hidden="true" type="double" units="none">1.0</fraction_transferred_when_ingested>
 				<cell_fusion_number description="how many times of cell fusion" type="int" units="none">0</cell_fusion_number>
 				 
-				<fusion_rate desription="rate of cell fusion" type="double" units="1/min">0.167</fusion_rate>
+				<fusion_rate description="rate of cell fusion" type="double" units="1/min">0.167</fusion_rate>
 				<time_to_next_fusion description="time it takes for the neighbor cell to be fused" type="double" units="min">0</time_to_next_fusion> 
 				<material_internalisation_rate desription="rate material is ingested by cell fusion" hidden="true" type="double" units="micron^3/min">8</material_internalisation_rate>   
 		
@@ -383,7 +383,7 @@
 				<fraction_transferred_when_ingested description="fraction of virions absorbed when phagocytosing a cell" hidden="true" type="double" units="none">1.0</fraction_transferred_when_ingested>
 				<cell_fusion_number description="how many times of cell fusion" type="int" units="none">0</cell_fusion_number>
 				 
-				<fusion_rate desription="rate of cell fusion" type="double" units="1/min">0.167</fusion_rate>
+				<fusion_rate description="rate of cell fusion" type="double" units="1/min">0.167</fusion_rate>
 				<time_to_next_fusion description="time it takes for the neighbor cell to be fused" type="double" units="min">0</time_to_next_fusion> 
 				<material_internalisation_rate desription="rate material is ingested by cell fusion" hidden="true" type="double" units="micron^3/min">8</material_internalisation_rate>   
 		
