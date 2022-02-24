@@ -9,3 +9,6 @@ This is initial release.
 
 ### 2.0:
 In this version of release, we added model of cell fusion. 
+
+### 3.0:
+In this version of release, we updated model of cell fusion. 

@@ -198,13 +198,13 @@
 				<viral_protein description="total assembled sets of viral protein" type="double" units="protein">0</viral_protein>
 				<assembled_virion description="total assembled virions" type="double" uints="virions">0</assembled_virion>
 				
-				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.0465</virion_uncoating_rate> 
-				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.0465</uncoated_to_RNA_rate>  
-				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.0465</protein_synthesis_rate>  
-				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.0465</virion_assembly_rate>  
+				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.06</virion_uncoating_rate> 
+				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.06</uncoated_to_RNA_rate>  
+				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.06</protein_synthesis_rate>  
+				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.06</virion_assembly_rate>  
  
 				
-				<virion_export_rate description="rate at which a virion is exported from a live cell" type="double" units="1/min">0.05</virion_export_rate> 
+				<virion_export_rate description="rate at which a virion is exported from a live cell" type="double" units="1/min">0.1</virion_export_rate> 
 
 				 
 				<unbound_external_ACE2 description="initial number of unbound ACE2 receptors on surface" type="double" units="receptors">1000</unbound_external_ACE2> 
@@ -227,15 +227,15 @@
 				<Uptaken_drug description="Total endocytosis drug" type="double" units="none">0</Uptaken_drug> 
 				<Intracellular_drug_concentration description="Intracellular drug concentration" type="double" units="uM">0</Intracellular_drug_concentration> 
 				<Intracellular_drug_effect description="Intracellular drug effect" type="double" units="none">0</Intracellular_drug_effect> 
-				<Extracellular_drug_effect description="Extracellular drug effect" type="double" units="none">0</Extracellular_drug_effect> 
+				<Extracellular_drug_effect description="Extracellular drug effect" hidden="true" type="double" units="none">0</Extracellular_drug_effect> 
 
 				 
-				<fraction_transferred_when_ingested description="fraction of virions absorbed when phagocytosing a cell" type="double" units="none">1.0</fraction_transferred_when_ingested>
+				<fraction_transferred_when_ingested description="fraction of virions absorbed when phagocytosing a cell" hidden="true" type="double" units="none">1.0</fraction_transferred_when_ingested>
 				<cell_fusion_number description="how many times of cell fusion" type="int" units="none">0</cell_fusion_number>
 				 
-				<phagocytosis_rate desription="rate of phagocytosing a nearby target" type="double" units="1/min">0.167</phagocytosis_rate>
-				<time_to_next_phagocytosis description="time it takes for the neighbor cell to be phagocytosed" type="double" units="min">0</time_to_next_phagocytosis> 
-				<material_internalisation_rate desription="rate material is ingested by phagocyte" type="double" units="micron^3/min">8</material_internalisation_rate>   
+				<fusion_rate desription="rate of cell fusion" type="double" units="1/min">0.167</fusion_rate>
+				<time_to_next_fusion description="time it takes for the neighbor cell to be fused" type="double" units="min">0</time_to_next_fusion> 
+				<material_internalisation_rate desription="rate material is ingested by cell fusion" hidden="true" type="double" units="micron^3/min">8</material_internalisation_rate>   
 		
 
 			</custom_data>
@@ -348,13 +348,13 @@
 				<viral_protein description="total assembled sets of viral protein" type="double" units="protein">0</viral_protein>
 				<assembled_virion description="total assembled virions" type="double" uints="virions">0</assembled_virion>
 				
-				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.0465</virion_uncoating_rate> 
-				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.0465</uncoated_to_RNA_rate>  
-				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.0465</protein_synthesis_rate>  
-				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.0465</virion_assembly_rate>  
+				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.06</virion_uncoating_rate> 
+				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.06</uncoated_to_RNA_rate>  
+				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.06</protein_synthesis_rate>  
+				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.06</virion_assembly_rate>  
  
 				
-				<virion_export_rate description="rate at which a virion is exported from a live cell" type="double" units="1/min">0.05</virion_export_rate> 
+				<virion_export_rate description="rate at which a virion is exported from a live cell" type="double" units="1/min">0.1</virion_export_rate> 
 
 				 
 				<unbound_external_ACE2 description="initial number of unbound ACE2 receptors on surface" type="double" units="receptors">1000</unbound_external_ACE2> 
@@ -377,15 +377,15 @@
 				<Uptaken_drug description="Total endocytosis drug" type="double" units="none">0</Uptaken_drug> 
 				<Intracellular_drug_concentration description="Intracellular drug concentration" type="double" units="uM">0</Intracellular_drug_concentration> 
 				<Intracellular_drug_effect description="Intracellular drug effect" type="double" units="none">0</Intracellular_drug_effect> 
-				<Extracellular_drug_effect description="Extracellular drug effect" type="double" units="none">0</Extracellular_drug_effect> 
+				<Extracellular_drug_effect description="Extracellular drug effect" hidden="true" type="double" units="none">0</Extracellular_drug_effect> 
 
 				 
-				<fraction_transferred_when_ingested description="fraction of virions absorbed when phagocytosing a cell" type="double" units="none">1.0</fraction_transferred_when_ingested>
+				<fraction_transferred_when_ingested description="fraction of virions absorbed when phagocytosing a cell" hidden="true" type="double" units="none">1.0</fraction_transferred_when_ingested>
 				<cell_fusion_number description="how many times of cell fusion" type="int" units="none">0</cell_fusion_number>
 				 
-				<phagocytosis_rate desription="rate of phagocytosing a nearby target" type="double" units="1/min">0.167</phagocytosis_rate>
-				<time_to_next_phagocytosis description="time it takes for the neighbor cell to be phagocytosed" type="double" units="min">0</time_to_next_phagocytosis> 
-				<material_internalisation_rate desription="rate material is ingested by phagocyte" type="double" units="micron^3/min">8</material_internalisation_rate>   
+				<fusion_rate desription="rate of cell fusion" type="double" units="1/min">0.167</fusion_rate>
+				<time_to_next_fusion description="time it takes for the neighbor cell to be fused" type="double" units="min">0</time_to_next_fusion> 
+				<material_internalisation_rate desription="rate material is ingested by cell fusion" hidden="true" type="double" units="micron^3/min">8</material_internalisation_rate>   
 		
 
 			</custom_data>
@@ -407,24 +407,24 @@
 
         	
             
-			<RNA_threshold description="The threshold of adding negative feedback for RNAs" hidden="true" type="double" units="RNAs">10</RNA_threshold>  
+			<RNA_threshold description="The threshold of adding negative feedback for RNAs" hidden="true" type="double" units="RNAs">100</RNA_threshold>  
 			<ACE2_binding_rate_feedback description="ACE2 receptor-virus binding rate when RNA reaches threshold" hidden="true" type="double" units="1/min">0.0015</ACE2_binding_rate_feedback>  
 			<ACE2_endocytosis_rate_feedback description="ACE2 receptor-virus endocytosis rate when RNA reaches threshold" hidden="true" type="double" units="1/min">0.02</ACE2_endocytosis_rate_feedback>  
-			<uncoated_to_RNA_rate_feedback description="Uncoated RNA rate when RNA reaches threshold" hidden="true" type="double" units="1/min">0.0232</uncoated_to_RNA_rate_feedback>  
+			<uncoated_to_RNA_rate_feedback description="Uncoated RNA rate when RNA reaches threshold" hidden="true" type="double" units="1/min">0.03</uncoated_to_RNA_rate_feedback>  
 
 
         	
             
             
 			<ACE2_endocytosis_rate_original description="ACE2 receptor-virus endocytosis rate" hidden="true" type="double" units="1/min">0.04</ACE2_endocytosis_rate_original>  
-			<virion_export_rate_original description="rate at which a virion is exported from a live cell" hidden="true" type="double" units="1/min">0.05</virion_export_rate_original> 
+			<virion_export_rate_original description="rate at which a virion is exported from a live cell" hidden="true" type="double" units="1/min">0.1</virion_export_rate_original> 
        		
        		
 			<ACE2_binding_rate_original description="ACE2 receptor-virus binding rate" hidden="true" type="double" units="1/min">0.003</ACE2_binding_rate_original> 
-			<virion_uncoating_rate_original description="rate at which an internalized virion is uncoated" hidden="true" type="double" units="1/min">0.0465</virion_uncoating_rate_original>
-			<uncoated_to_RNA_rate_original description="rate at which uncoated virion makes its mRNA available" hidden="true" type="double" units="1/min">0.0465</uncoated_to_RNA_rate_original> 
-			<protein_synthesis_rate_original description="rate at mRNA creates complete set of proteins" hidden="true" type="double" units="1/min">0.0465</protein_synthesis_rate_original>
-			<virion_assembly_rate_original description="rate at which viral proteins are assembled into complete virion" hidden="true" type="double" units="1/min">0.0465</virion_assembly_rate_original>
+			<virion_uncoating_rate_original description="rate at which an internalized virion is uncoated" hidden="true" type="double" units="1/min">0.06</virion_uncoating_rate_original>
+			<uncoated_to_RNA_rate_original description="rate at which uncoated virion makes its mRNA available" hidden="true" type="double" units="1/min">0.06</uncoated_to_RNA_rate_original> 
+			<protein_synthesis_rate_original description="rate at mRNA creates complete set of proteins" hidden="true" type="double" units="1/min">0.06</protein_synthesis_rate_original>
+			<virion_assembly_rate_original description="rate at which viral proteins are assembled into complete virion" hidden="true" type="double" units="1/min">0.06</virion_assembly_rate_original>
 
 
 		<div_MaximumDamage description="---Drug induced maximum damage on rates---" type="divider" />	           
@@ -445,7 +445,7 @@
 
 		    <drug_doses description="The injected drug concentration" type="double" units="uM">5.0</drug_doses>		
 			<EC_50 description="Drug concentration value that gives 50% max effect" type="double" units="uM">2.5</EC_50>  
-			<Hill_power description="Power that used in Hill Function for calculating drug effect" type="double" units="none">1.0</Hill_power> 
+			<Hill_power description="Power that used in Hill Function for calculating drug effect" type="double" units="none">2.5</Hill_power> 
 			   
 			<drug_efficiency description="Drug efficiency on inhibition of virion multiplication ([0, 1])" type="double" units="none">1.0</drug_efficiency>
 			<dose_duration description="The time duration between two dose injection" type="int" units="min">14400000</dose_duration>
@@ -454,7 +454,7 @@
 			<internalization_rate description="Rate at which lung epithelium uptakes drug" type="double" units="1/min">0.0116</internalization_rate> 
 	                 
 			<drug_endo_export description="Turn on the drug effect on virial endocytosis and export or not" type="bool" units="none">True</drug_endo_export>
-			<drug_binding_replication description="Turn on the drug effect on virial binding and replication or not" type="bool" units="none">False</drug_binding_replication>
+			<drug_replication description="Turn on the drug effect on virial replication or not" type="bool" units="none">False</drug_replication>
 
 
 		<div_colors description="---Cell Color Options--" type="divider" />
@@ -462,11 +462,12 @@
 			<apoptotic_epithelium_color description="apoptotic epithelial cell color" type="string">black</apoptotic_epithelium_color>
 
 
-			 
-		<div_colors description="---Cell fusion Options--" type="divider" />
-			<max_apoptosis_half_max_orginal description="viral load at which cells reach half max apoptosis rate" type="double" units="virion">500.0</max_apoptosis_half_max_orginal> 
-			<half_max_cell_fusion description="viral load at which cell fusion reach half max rate" type="double" units="virion">100.0</half_max_cell_fusion>
-			<drug_fusion_power description="Power that used in function for cell fusion inhibtion" type="double" units="none">5.0</drug_fusion_power> 
+			
+		<div_colors description="---Cell fusion Options--" type="divider" /> 
+			<max_apoptosis_half_max_orginal description="viral load at which cells reach half max apoptosis rate" hidden="true" type="double" units="virion">500</max_apoptosis_half_max_orginal> 
+			<half_max_virion_fusion description="viral load at which cell fusion reach half max rate" type="double" units="virion">100.0</half_max_virion_fusion>
+			<half_max_ACE2_fusion description="unbound ACE2 at which cell fusion reach half max rate" type="double" units="ACE2">200.0</half_max_ACE2_fusion>
+			<drug_fusion_power description="Power that used in function for cell fusion inhibtion" type="double" units="none">2.5</drug_fusion_power> 
 			<drug_cell_fusion description="Turn on the drug effect on cell fusion or not" type="bool" units="none">True</drug_cell_fusion>
 
 		
