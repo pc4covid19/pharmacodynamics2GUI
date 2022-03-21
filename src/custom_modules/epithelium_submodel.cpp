@@ -239,7 +239,7 @@ void epithelium_fusion( Cell* pCell, Phenotype& phenotype, double dt )
 				pCell->fuse_cell( pTestCell );
 
 				// already done in fuse_cell function
-				// pCell->position = mean_position;      // update the new position, have done in cell fusion 
+				// pCell->position = mean_position;      // update the new position, have done in function of cell fusion 
 				// pCell->update_voxel_in_container();   // update in the data structure 
 
 			}
